@@ -115,7 +115,7 @@ public class BasePage {
             return driverBase.getDriver().findElements(By.partialLinkText(locatorTValue));
         }else if (locatorType.toLowerCase().equals("xpath")){
             return driverBase.getDriver().findElements(By.xpath(locatorTValue));
-        }else if (locatorType.toLowerCase().equals("css")){
+        }else if (locatorType.toLowerCase().equals("cssselector")){
             return driverBase.getDriver().findElements(By.cssSelector(locatorTValue));
         }else {
             throw  new Exception("输入的locator type未在程序中定义："+locatorType);
@@ -152,7 +152,7 @@ public class BasePage {
             return driverBase.getDriver().findElement(By.partialLinkText(locatorValue));
         else if ((locatorType.toLowerCase().equals("xpath")))
             return driverBase.getDriver().findElement(By.xpath(locatorValue));
-        else if ((locatorType.toLowerCase().equals("css")))
+        else if ((locatorType.toLowerCase().equals("cssselector")))
             return driverBase.getDriver().findElement(By.cssSelector(locatorValue));
         else {
             throw new Exception("输入的locator type未在程序中定义："+locatorType);
@@ -188,7 +188,7 @@ public class BasePage {
             return By.partialLinkText(locatorValue);
         else if ((locatorType.toLowerCase().equals("xpath")))
             return By.xpath(locatorValue);
-        else if ((locatorType.toLowerCase().equals("css")))
+        else if ((locatorType.toLowerCase().equals("cssselector")))
             return By.cssSelector(locatorValue);
         else {
             throw new Exception("输入的locator type未在程序中定义："+locatorType);

@@ -3,6 +3,7 @@ package com.sunnysnow.testcases;
 import com.sunnysnow.task.IndexTask;
 import com.sunnysnow.task.LoginTask;
 import com.sunnysnow.utils.DriverBase;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -21,6 +22,7 @@ public class BaseCase {
         loginTask = new LoginTask(driverBase);
         driverBase.get(bundle.getString("login.url"));
         driverBase.sleep(3);
+        loginTask.login(bundle.getString("username"),bundle.getString("passWord"));
     }
 
 

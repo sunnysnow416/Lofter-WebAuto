@@ -3,7 +3,14 @@
 <suite name="Suite" verbose="1">
     <test name="mytest">
         <classes>
-            <!----><class name="com.sunnysnow.testcases.LoginTestCase"/>
+            <!--<class name="com.sunnysnow.testcases.LoginTestCase"/>
+            <class name="com.sunnysnow.testcases.TextTestCase"/>
+            <class name="com.sunnysnow.testcases.PicTestCase"/>
+            <class name="com.sunnysnow.testcases.ArticleTestCase"/>
+            <class name="com.sunnysnow.testcases.MusicTestCase"/>
+            <class name="com.sunnysnow.testcases.VideoTestCase"/>
+            <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>-->
+            <class name="com.sunnysnow.testcases.ArticleListJudgeTestCase"/>
         </classes>
     </test>
 </suite>

@@ -8,6 +8,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
+import java.io.IOException;
 import java.util.List;
 
 /*
@@ -20,36 +22,37 @@ public class BaseTask {
 
     /**
      * 构造函数
+     *
      * @param driverBase
      */
     public BaseTask(DriverBase driverBase) {
         this.driverBase = driverBase;
-        basePage= new BasePage(driverBase);
+        basePage = new BasePage(driverBase);
     }
 
     /**
      * 封装点击方法
+     *
      * @param element
      */
-    public void click(WebElement element){
-        if(element!=null){
+    public void click(WebElement element) {
+        if (element != null) {
             element.click();
-        }
-        else{
-            LoggerUtil.info(element+"元素没有定位到,输入失败");
+        } else {
+            LoggerUtil.info(element + "元素没有定位到,输入失败");
         }
     }
 
     /**
      * 封装清空方法
+     *
      * @param element
      */
-    public void clear(WebElement element){
-        if(element!=null){
+    public void clear(WebElement element) {
+        if (element != null) {
             element.clear();
-        }
-        else{
-            LoggerUtil.info(element+"元素没有定位到,输入失败");
+        } else {
+            LoggerUtil.info(element + "元素没有定位到,输入失败");
         }
     }
 
@@ -57,11 +60,11 @@ public class BaseTask {
      *  @author shao
      * 封装输入方法
      * */
-    public void sendKeys(WebElement element,String value) {
-        if(element!=null) {
+    public void sendKeys(WebElement element, String value) {
+        if (element != null) {
             element.sendKeys(value);
-        }else {
-            LoggerUtil.info(element+"元素没有定位到,输入失败"+value);
+        } else {
+            LoggerUtil.info(element + "元素没有定位到,输入失败" + value);
         }
     }
 
@@ -74,11 +77,13 @@ public class BaseTask {
 
     /**
      * 鼠标悬停
+     *
      * @param element
      */
-    public void  MouseOver(WebElement element){
+    public void MouseOver(WebElement element) {
         Actions actions = new Actions(driverBase.getDriver());
-        actions.moveToElement(element).perform();;
+        actions.moveToElement(element).perform();
+        ;
     }
 
     /*
@@ -107,19 +112,17 @@ public class BaseTask {
      * @param tagName
      * @param elementArray
      */
-    public void clickElementArray(String menuName,String tagName,List<WebElement> elementArray){
-        List<WebElement> list =elementArray;
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).getText().equals(menuName)){
-                LoggerUtil.info("获取到的菜单名称为："+list.get(i).getText()+":传入的菜单名称为："+menuName);
+    public void clickElementArray(String menuName, String tagName, List<WebElement> elementArray) {
+        List<WebElement> list = elementArray;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getText().equals(menuName)) {
+                LoggerUtil.info("获取到的菜单名称为：" + list.get(i).getText() + ":传入的菜单名称为：" + menuName);
                 click(list.get(i).findElement(By.tagName(tagName)));
                 break;
-            }
-            else if(i==list.size()-1){
+            } else if (i == list.size() - 1) {
                 LoggerUtil.info("没有该菜单元素");
                 break;
-            }
-            else{
+            } else {
                 continue;
             }
         }
@@ -129,18 +132,16 @@ public class BaseTask {
      * @param tagName
      * @param elementArray
      */
-    public void tableElementArray(String str,String tagName,List<WebElement> elementArray){
-        List<WebElement> list =elementArray;
-        for(int i=0;i<list.size();i++){
-            if(list.get(i).getText().equals(str)){
+    public void tableElementArray(String str, String tagName, List<WebElement> elementArray) {
+        List<WebElement> list = elementArray;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getText().equals(str)) {
                 click(list.get(i).findElement(By.tagName(tagName)));
                 break;
-            }
-            else if(i==list.size()-1){
+            } else if (i == list.size() - 1) {
                 LoggerUtil.info("没有该菜单元素");
                 break;
-            }
-            else{
+            } else {
                 continue;
             }
         }
@@ -161,13 +162,13 @@ public class BaseTask {
         driverBase.getDriver().close();
     }*/
 
-
     /**
      * 获取列表中的行数
+     *
      * @param by
      * @return
      */
-    public  int GetRowCount( By by) {
+    public int GetRowCount(By by) {
         // 获取table元素
         WebElement table = driverBase.getDriver().findElement(by);
         // 获取table表中tr元素集合
@@ -177,15 +178,15 @@ public class BaseTask {
         return RowCount;
     }
 
-
     /**
      * 鼠标移动到菜单栏，弹出二级菜单并点击
+     *
      * @param actions
      * @param firstmenu
      * @param secondmenu
      * @throws InterruptedException
      */
-    public void MoveMouseMenu(Actions actions,String firstmenu, String secondmenu) throws InterruptedException {
+    public void MoveMouseMenu(Actions actions, String firstmenu, String secondmenu) throws InterruptedException {
         actions = new Actions(driverBase.getDriver());
         actions.moveToElement(driverBase.getDriver().findElement(By.linkText(firstmenu))).perform();
         // JS脚本，点击二级菜单
@@ -197,15 +198,15 @@ public class BaseTask {
 
     /**
      * 获取当前窗口所有的windows
-     * */
-    public List<String> getWindowsHandles(){
+     */
+    public List<String> getWindowsHandles() {
         List<String> handles = driverBase.getWindowsHandles();
         return handles;
     }
 
     /**
      * 根据title切换新窗口
-     * */
+     */
     public boolean switchToWindow_Title(String windowTitle) {
         boolean flag = false;
         try {
@@ -232,12 +233,32 @@ public class BaseTask {
         return flag;
     }
 
-
     /*
      * 切换iframe
      * */
-    public void getIframe(WebElement element){
+    public void getIframe(WebElement element) {
         driverBase.getDriver().switchTo().frame(element);
     }
 
+    /**
+     * 上传单张图片
+     * @param element
+     * @param path
+     */
+    public void uploadFile(WebElement element, String path,int num) {
+        try {
+            //点击上传图片
+            click(element);
+            driverBase.sleep(num);
+        /*
+        使用AutoIT进行上传附件
+        参考网址：
+        https://www.cnblogs.com/longronglang/p/11312140.html
+         */
+            Runtime.getRuntime().exec(path);
+            driverBase.sleep(num);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
