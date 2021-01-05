@@ -1,6 +1,7 @@
 package com.sunnysnow.testcases;
 
 import com.sunnysnow.task.IndexTask;
+import com.sunnysnow.utils.Assertion;
 import com.sunnysnow.utils.CommUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,7 +16,8 @@ public class PicTestCase extends BaseCase {
     public void noPicPublishTest(){
         indexTask = new IndexTask(driverBase);
         String result = indexTask.publisjPic();
-        Assert.assertEquals(result,"您还没有添加任何图片！");
+        //Assert.assertEquals(result,"您还没有添加任何图片！");
+        Assertion.verifyEquals(result,"您还没有添加任何图片！");
     }
 
     /**
@@ -25,7 +27,8 @@ public class PicTestCase extends BaseCase {
     public void noPicPreviewTest(){
         indexTask = new IndexTask(driverBase);
         String result = indexTask.publishPicPreview();
-        Assert.assertEquals(result,"您还没有添加任何图片！");
+        //Assert.assertEquals(result,"您还没有添加任何图片！");
+        Assertion.verifyEquals(result,"您还没有添加任何图片！");
     }
 
     /**
@@ -39,6 +42,7 @@ public class PicTestCase extends BaseCase {
         String content="图片测试正文"+ CommUtil.getCurrentSysTime();
 
         indexTask.publisjPic(path,content);
-        Assert.assertEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
+        //Assert.assertEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
+        Assertion.verifyEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
     }
 }

@@ -1,6 +1,7 @@
 package com.sunnysnow.testcases;
 
 import com.sunnysnow.task.IndexTask;
+import com.sunnysnow.utils.Assertion;
 import com.sunnysnow.utils.CommUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -43,6 +44,7 @@ public class TextTestCase extends  BaseCase {
         String title="我的测试标题"+ CommUtil.getCurrentSysTime();
         String content="我的测试正文"+CommUtil.getCurrentSysTime();
         String result = indexTask.publishTxtPreview(title,content);
-        Assert.assertEquals(result,title);
+        //Assert.assertEquals(result,title);
+        Assertion.verifyEquals(result,title);
     }
 }

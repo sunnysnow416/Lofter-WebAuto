@@ -9,8 +9,15 @@
             <class name="com.sunnysnow.testcases.ArticleTestCase"/>
             <class name="com.sunnysnow.testcases.MusicTestCase"/>
             <class name="com.sunnysnow.testcases.VideoTestCase"/>
-            <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>-->
-            <class name="com.sunnysnow.testcases.ArticleListJudgeTestCase"/>
+            <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>
+            <class name="com.sunnysnow.testcases.ArticleListJudgeTestCase"/>-->
+            <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>
+
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.sunnysnow.utils.ExtentTestNGIReporterListener"/>
+        <listener class-name="com.sunnysnow.utils.AssertionListener"/>
+        <listener class-name="com.sunnysnow.utils.TakeScreenshotListener" />
+    </listeners>
 </suite>

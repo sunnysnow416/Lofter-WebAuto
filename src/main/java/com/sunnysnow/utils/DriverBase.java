@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
     包括返回driver，关闭driver，获取handle，获取alert等操作
  */
 public class DriverBase {
-    public WebDriver driver;
+    public static WebDriver driver;
 
     //构造方法
     public DriverBase(String browser) {
@@ -57,7 +57,7 @@ public class DriverBase {
      *
      * @return
      */
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 

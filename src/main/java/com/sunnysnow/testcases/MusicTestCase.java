@@ -1,6 +1,7 @@
 package com.sunnysnow.testcases;
 
 import com.sunnysnow.task.IndexTask;
+import com.sunnysnow.utils.Assertion;
 import com.sunnysnow.utils.CommUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,7 +16,8 @@ public class MusicTestCase extends BaseCase{
     public void noMusicPublishTest(){
         indexTask = new IndexTask(driverBase);
         String result = indexTask.publishMusic();
-        Assert.assertEquals(result,"请添加音乐！");
+        //Assert.assertEquals(result,"请添加音乐！");
+        Assertion.verifyEquals(result,"请添加音乐！");
     }
 
     /**
@@ -25,7 +27,8 @@ public class MusicTestCase extends BaseCase{
     public void noMusicPreviewTest(){
         indexTask = new IndexTask(driverBase);
         String result = indexTask.publishMusicPreview();
-        Assert.assertEquals(result,"请添加音乐！");
+        //Assert.assertEquals(result,"请添加音乐！");
+        Assertion.verifyEquals(result,"请添加音乐！");
     }
 
     /**
@@ -38,6 +41,7 @@ public class MusicTestCase extends BaseCase{
         String content="音乐测试正文"+ CommUtil.getCurrentSysTime();
 
         indexTask.publishMusic(name,content);
-        Assert.assertEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
+        //Assert.assertEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
+        Assertion.verifyEquals(indexTask.txtSuccessMsg(),"发布成功，动态审核中");
     }
 }

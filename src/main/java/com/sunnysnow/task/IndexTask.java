@@ -485,6 +485,7 @@ public class IndexTask extends BaseTask {
             sendKeys(indexPage.getCenterArticlejudgeTxtEle(),msg);
             //点击发布按钮
             click(indexPage.getCenterArticlefbBtnEle());
+            driverBase.sleep(2);
             //评论列表
             List<WebElement> plList = indexPage.getCenterArticlejudgeContentListEle();
             for (WebElement element : plList) {

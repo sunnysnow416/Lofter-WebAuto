@@ -1,2 +1,10 @@
 0    INFO  2020-12-29 15:13:13 com.sunnysnow.utils.LoggerUtil null元素没有定位到,输入失败
 47   INFO  2020-12-29 15:13:13 com.sunnysnow.utils.LoggerUtil null元素没有定位到,输入失败
+0    INFO  2020-12-31 17:12:33 com.sunnysnow.utils.LoggerUtil null元素没有定位到,输入失败
+102  INFO  2020-12-31 17:12:33 com.sunnysnow.utils.LoggerUtil null元素没有定位到,输入失败
+1    INFO  2021-01-04 11:33:04 com.sunnysnow.utils.LoggerUtil 开始截图
+1600 INFO  2021-01-04 11:33:06 com.sunnysnow.utils.LoggerUtil 截图成功
+0    INFO  2021-01-04 11:40:15 com.sunnysnow.utils.LoggerUtil 开始截图
+526  INFO  2021-01-04 11:40:16 com.sunnysnow.utils.LoggerUtil 截图成功
+0    INFO  2021-01-04 11:42:33 com.sunnysnow.utils.LoggerUtil 开始截图
+852  INFO  2021-01-04 11:42:34 com.sunnysnow.utils.LoggerUtil 截图成功

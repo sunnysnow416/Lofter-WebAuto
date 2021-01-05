@@ -2,8 +2,8 @@ package com.sunnysnow.testcases;
 
 import com.sunnysnow.task.IndexTask;
 import com.sunnysnow.task.LoginTask;
+import com.sunnysnow.utils.Assertion;
 import com.sunnysnow.utils.DriverBase;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -30,7 +30,7 @@ public class LoginTestCase {
     @Test(description = "成功登录")
     public void loginTest(){
         loginTask.login(bundle.getString("username"),bundle.getString("passWord"));
-        Assert.assertEquals(indexTask.showUser(),"maoqingqingmao");
+        Assertion.verifyEquals(indexTask.showUser(),"maoqingqingmao1");
         indexTask.logout();
     }
 
