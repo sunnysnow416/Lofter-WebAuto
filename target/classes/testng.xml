@@ -11,7 +11,7 @@
             <class name="com.sunnysnow.testcases.VideoTestCase"/>
             <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>
             <class name="com.sunnysnow.testcases.ArticleListJudgeTestCase"/>-->
-            <class name="com.sunnysnow.testcases.ArticleListDelTestCase"/>
+            <class name="com.sunnysnow.testcases.CollectionTestCase"/>
 
         </classes>
     </test>

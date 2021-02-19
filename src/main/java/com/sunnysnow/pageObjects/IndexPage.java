@@ -366,4 +366,12 @@ public WebElement getPublishCancelEle() throws Exception {
     public List<WebElement> getCenterArticlejudgeContentListEle() throws Exception {
         return elements("index.center.article.judeglist.content");
     }
+
+    /**
+     * 首页-创作者中心-合集
+     * @return
+     */
+    public WebElement getCenterCollectionEle() throws Exception {
+        return getElementObject("index.center.collection");
+    }
 }
